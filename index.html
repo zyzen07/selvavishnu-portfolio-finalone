@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/102875837?v=4">
+    <link rel="preload" as="image" href="Cartoonify.png">
     <style>
         html {
             scroll-padding-top: 60px;
@@ -146,13 +146,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 80px 100px 0;
-            background: #2a2a2a;
+            padding: 100px 100px 50px;
+            background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
             overflow: visible;
         }
 
         .hero-content {
-            max-width: 600px;
+            max-width: 650px;
+            text-align: left;
         }
 
         .hero-content .typing-name {
@@ -160,25 +161,27 @@
             font-size: 32px;
             font-weight: 400;
             color: #f0f0f0;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: block;
+            line-height: 1.2;
         }
 
         .hero-content .typing-name span {
             font-family: 'Playfair Display', serif;
-            font-size: 56px;
+            font-size: 60px;
             font-weight: 700;
             display: block;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .hero-content .typing-effect {
             font-family: 'Roboto Mono', monospace;
-            font-size: 20px;
-            color: #b0b0b0;
+            font-size: 22px;
+            color: #d1d1d1;
             margin-bottom: 20px;
             min-height: 30px;
             display: inline-block;
-            border-right: 2px solid #b0b0b0;
+            border-right: 3px solid #d1d1d1;
             letter-spacing: 0.05em;
             animation: blink 0.75s step-end infinite;
         }
@@ -188,21 +191,25 @@
         }
 
         .hero-content .description {
-            font-size: 16px;
+            font-size: 18px;
             color: #b0b0b0;
             margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.8;
+            max-width: 600px;
         }
 
         .hero-content .social-icons {
             display: flex;
+            align-items: center;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             padding: 10px 0;
             opacity: 1 !important;
             z-index: 10;
             flex-wrap: nowrap;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .hero-content .social-icon {
@@ -231,9 +238,36 @@
             box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
         }
 
+        .hero-content .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #2a2a2a;
+            color: #f0f0f0;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-left: 20px;
+            width: fit-content;
+        }
+
+        .hero-content .resume-btn i {
+            font-size: 14px;
+        }
+
+        .hero-content .resume-btn:hover {
+            background: #0077cc;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
         .hero-buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
         .hero-content .btn {
@@ -256,16 +290,17 @@
         }
 
         .hero-img {
-            width: 280px;
-            height: 280px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             overflow: hidden;
             transition: transform 0.4s ease;
             backface-visibility: hidden;
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.1);
         }
 
         .hero-img:hover {
-            transform: scale(1.1) rotate(8deg);
+            transform: scale(1.15) rotate(10deg);
         }
 
         .hero-img img {
@@ -530,6 +565,7 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
+            padding-left: 10px;
         }
 
         .achievement-grid::before {
@@ -862,6 +898,14 @@
                 text-align: center;
             }
 
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-content .typing-name span {
+                font-size: 48px;
+            }
+
             .hero-img {
                 margin-top: 20px;
             }
@@ -872,9 +916,22 @@
 
             .hero-content .social-icons {
                 flex-direction: row;
+                justify-content: center;
+                align-items: center;
                 gap: 15px;
-                flex-wrap: nowrap;
                 font-size: 24px;
+            }
+
+            .hero-content .resume-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+                margin-left: 15px;
+                width: fit-content;
+                 
+            }
+
+            .hero-content .resume-btn i {
+                font-size: 12px;
             }
 
             .about,
@@ -909,16 +966,17 @@
 
             .achievement-grid {
                 gap: 20px;
+                padding-left: 10px;
             }
 
             .achievement-grid::before {
-                left: 20px;
+                left: 15px;
             }
 
             .achievement-card {
-                width: 100%;
+                width: calc(100% - 20px);
                 align-self: flex-start;
-                margin-left: 40px;
+                margin-left: 20px;
             }
 
             .achievement-card:nth-child(1),
@@ -926,7 +984,7 @@
             .achievement-card:nth-child(3),
             .achievement-card:nth-child(4) {
                 align-self: flex-start;
-                margin-left: 40px;
+                margin-left: 20px;
             }
 
             .social-links {
@@ -951,7 +1009,40 @@
         }
 
         @media (max-width: 320px) {
-            .hero-content .social-icons,
+            .hero-content .social-icons {
+                gap: 10px;
+            }
+
+            .hero-content .social-icon {
+                font-size: 22px;
+            }
+
+            .hero-content .resume-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+                margin-left: 10px;
+            }
+
+            .hero-content .resume-btn i {
+                font-size: 10px;
+            }
+
+            .achievement-card {
+                width: calc(100% - 15px);
+                margin-left: 15px;
+            }
+
+            .achievement-card:nth-child(1),
+            .achievement-card:nth-child(2),
+            .achievement-card:nth-child(3),
+            .achievement-card:nth-child(4) {
+                margin-left: 15px;
+            }
+
+            .achievement-grid::before {
+                left: 10px;
+            }
+
             .social-links {
                 flex-wrap: wrap;
             }
@@ -994,6 +1085,7 @@
                 <a href="https://www.linkedin.com/in/selvavishnug" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/zyzen07" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
                 <a href="mailto:selvavishnug25@gmail.com" class="social-icon gmail"><i class="fas fa-envelope"></i></a>
+                <a href="https://drive.google.com/file/d/1ZxbNDw3QJWbJ9cuvLys9RPKC_g7D6_vZ/view?usp=drive_link" target="_blank" class="resume-btn"><i class="fas fa-download"></i> Download Resume</a>
             </div>
             <div class="hero-buttons">
                 <a href="#projects" class="btn">View My Work</a>
@@ -1001,7 +1093,7 @@
             </div>
         </div>
         <div class="hero-img">
-            <img src="Cartoonify.png" alt="Selva Vishnu G" loading="eager" fetchpriority="high" width="280" height="280">
+            <img src="Cartoonify.png" alt="Selva Vishnu G" loading="eager" fetchpriority="high" width="260" height="260">
         </div>
     </section>
 
@@ -1195,9 +1287,9 @@
                 <a href="mailto:selvavishnug25@gmail.com" class="email"><i class="fas fa-envelope"></i></a>
             </div>
             <div class="contact-form card" id="contact-form">
-                <form action="https://usebasin.com/f/8fdb765a9412" method="POST">
+                <form action="https://formspree.io/f/mzzgarnb" method="POST">
                     <input type="text" name="name" id="name" placeholder="Your Name" required>
-                    <input type="email" name="email" id="email" placeholder="Your Email" required>
+                    <input type="email" name="_email" id="email" placeholder="Your Email" required>
                     <textarea name="message" id="message" placeholder="Your Message" required></textarea>
                     <button type="submit" class="btn">Send Message</button>
                 </form>
@@ -1330,16 +1422,66 @@
                 });
             });
 
-            // Hero Section Name Typing Animation (GSAP)
+            // Hero Section Animations
             gsap.from('.typing-name', {
-                text: '',
+                opacity: 0,
+                x: -20,
                 duration: 1.5,
-                ease: 'none',
-                onStart: () => {
-                    gsap.set('.typing-name', { text: '' });
-                },
+                ease: 'power3.out',
+                delay: 0.5,
                 onComplete: () => {
                     startTypingEffect();
+                }
+            });
+
+            gsap.from('.typing-effect', {
+                opacity: 0,
+                x: -20,
+                duration: 1,
+                ease: 'power3.out',
+                delay: 1.0
+            });
+
+            gsap.from('.description', {
+                opacity: 0,
+                x: -20,
+                duration: 1,
+                ease: 'power3.out',
+                delay: 1.5
+            });
+
+            gsap.from('.social-icons .social-icon, .social-icons .resume-btn', {
+                opacity: 0,
+                x: -20,
+                duration: 1,
+                ease: 'power3.out',
+                stagger: 0.2,
+                delay: 2.0,
+                onComplete: () => {
+                    document.querySelectorAll('.social-icon, .resume-btn').forEach(el => {
+                        el.style.opacity = '1';
+                    });
+                }
+            });
+
+            gsap.from('.hero-buttons .btn', {
+                opacity: 0,
+                x: -20,
+                duration: 1,
+                ease: 'power3.out',
+                stagger: 0.2,
+                delay: 2.5
+            });
+
+            gsap.from('.hero-img', {
+                opacity: 0,
+                scale: 0.8,
+                duration: 1.2,
+                ease: 'elastic.out(1, 0.3)',
+                delay: 1.0,
+                scrollTrigger: {
+                    trigger: '.hero-img',
+                    fastScrollEnd: true
                 }
             });
 
@@ -1392,50 +1534,6 @@
                 });
             }
 
-            // Other GSAP Animations
-            gsap.from('.description', {
-                opacity: 0,
-                y: 20,
-                duration: 0.8,
-                ease: 'power2.out',
-                delay: 1.8
-            });
-
-            gsap.from('.social-icons .social-icon', {
-                opacity: 0,
-                y: 20,
-                duration: 0.8,
-                ease: 'power2.out',
-                stagger: 0.2,
-                delay: 2.0,
-                onComplete: () => {
-                    document.querySelectorAll('.social-icon').forEach(icon => {
-                        icon.style.opacity = '1';
-                    });
-                }
-            });
-
-            gsap.from('.hero-buttons .btn', {
-                opacity: 0,
-                y: 20,
-                duration: 0.8,
-                ease: 'power2.out',
-                stagger: 0.2,
-                delay: 2.2
-            });
-
-            gsap.from('.hero-img', {
-                opacity: 0,
-                scale: 0.8,
-                duration: 0.8,
-                ease: 'elastic.out(1, 0.5)',
-                delay: 1.5,
-                scrollTrigger: {
-                    trigger: '.hero-img',
-                    fastScrollEnd: true
-                }
-            });
-
             // Contact Form Submission
             const form = document.querySelector('#contact-form form');
             const successMessage = document.getElementById('success-message');
@@ -1445,7 +1543,7 @@
                 const formData = new FormData(form);
 
                 try {
-                    const response = await fetch('https://usebasin.com/f/8fdb765a9412', {
+                    const response = await fetch('https://formspree.io/f/mzzgarnb', {
                         method: 'POST',
                         body: formData,
                         headers: {
